@@ -1,4 +1,4 @@
-package com.itmuch.cloud.microservicesimpleconsumermovie.model;
+package edume.microservicefeignconsumermovie.model;
 
 import lombok.Data;
 

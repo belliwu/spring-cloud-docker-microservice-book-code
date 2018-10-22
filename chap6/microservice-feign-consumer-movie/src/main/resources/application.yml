@@ -1,0 +1,25 @@
+server:
+  port: 8010
+  
+spring:
+  application:
+    name: microservice-feign-consumer-movie
+  security:
+    basic:
+      enabled: false
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZonehttp: http://peer1:8761/eureka,http://peer2:8762/eureka/
+
+info:
+  app:
+    name: "@project.artifactId@"
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      source: "@java.version@"
+      target: "@java.version@"
+      
