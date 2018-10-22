@@ -1,18 +1,20 @@
 server:
-  port: 8001
+  port: 8010
   
 spring:
   application:
     name: microservice-consumer-movie
+  security:
+    basic:
+      enabled: false
 
 eureka:
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
-      defaultZone: http://peer1:8761/eureka/, http://peer2:8762/eureka/
-  
-  instance:
-    prefer-ip-address: true
-    
+      defaultZonehttp: http://peer1:8761/eureka,http://peer2:8762/eureka/
+
 info:
   app:
     name: "@project.artifactId@"
@@ -21,5 +23,3 @@ info:
       source: "@java.version@"
       target: "@java.version@"
       
-security:
-    enabled: false
