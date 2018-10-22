@@ -3,6 +3,7 @@ package edume.microservicesimpleprovideruser.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +18,8 @@ public class UserController
 	private UserRepository userRepository;
 
 	@GetMapping("/{id}")
-	public User findById(@PathVariable Long id)
+	public Optional<User> findById(@PathVariable Long id)
 	{
-		return this.userRepository.findOne(id);
+		return this.userRepository.findById(id);
 	}
 }

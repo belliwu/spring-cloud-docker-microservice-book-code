@@ -1,38 +1,23 @@
 server:
   port: 8000
 spring:
-  jpa:
-    generate-ddl: false
-    show-sql: true
-    hibernate:
-      ddl-auto: none
-  datasource:                           # 指定数据源
-    platform: h2                        # 指定数据源类型
-    schema: classpath:db/schema.sql        # 指定h2数据库的建表脚本
-    data: classpath:db/data.sql            # 指定h2数据库的数据脚本
-logging:                                # 配置日志级别，让hibernate打印出执行的SQL
-  level:
-    root: INFO
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+  application:
+    name: microservice-provider-user
+  mongodb:
+    uri: mongodb://test:test@127.0.0.1:27017/test
+
 info:
   app:
-    name: "@project.artifactId@"
-    encoding: "@project.build.sourceEncoding@"
+    name: '@project.artifactId@'
+    encoding: '@project.build.sourceEncoding@'
     java:
-      source: "@java.version@"
-      target: "@java.version@"
+      source: '@java.version@'
+      target: '@java.version@'
 eureka:
   client:
     serviceUrl:
-       defaultZone: http://peer1:8761/eureka/, http://peer2:8762/eureka/
-
+      defaultZone: http://peer1:8761/eureka/, http://peer2:8762/eureka/
   instance:
     prefer-ip-address: true
-
     metadata-map:
       my-metadata: Provides user metadata
-    
-      
-      
