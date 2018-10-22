@@ -1,32 +1,61 @@
 package edume.microservicesimpleprovideruser.model;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import lombok.Data;
-
-@Data
 @Entity
 public class User
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	@Column
-	private String username = null;
-
+	private String username;
 	@Column
-	private String name = null;
-
+	private String name;
 	@Column
-	private Integer age = 0;
+	private Integer age;
 
-	@Column
-	private BigDecimal balance;
+	public Long getId()
+	{
+		return id;
+	}
+
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
+
+	public String getUsername()
+	{
+		return username;
+	}
+
+	public void setUsername(String username)
+	{
+		this.username = username;
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public Integer getAge()
+	{
+		return age;
+	}
+
+	public void setAge(Integer age)
+	{
+		this.age = age;
+	}
 }
